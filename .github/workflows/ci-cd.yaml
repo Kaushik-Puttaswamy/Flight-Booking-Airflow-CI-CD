@@ -38,12 +38,12 @@ jobs:
       - name: Wait for GCS Sync
         run: sleep 30
 
-      # Verify Variables JSON in Composer
+      # Verify Variables JSON in Composer (Optional)
       - name: Verify Variables JSON in Composer
         run: |
           gcloud composer environments run airflow-dev \
             --location us-central1 \
-            bash -- -c "ls /home/airflow/gcs/data/dev/"
+            variables list
 
       # Import Variables into Airflow-DEV
       - name: Import Variables into Airflow-DEV
@@ -96,12 +96,12 @@ jobs:
       - name: Wait for GCS Sync
         run: sleep 30
 
-      # Verify Variables JSON in Composer
+      # Verify Variables JSON in Composer (Optional)
       - name: Verify Variables JSON in Composer
         run: |
           gcloud composer environments run airflow-prod \
             --location us-central1 \
-            bash -- -c "ls /home/airflow/gcs/data/prod/"
+            variables list
 
       # Import Variables into Airflow-PROD
       - name: Import Variables into Airflow-PROD
