@@ -41,7 +41,9 @@ jobs:
       # Verify Variables JSON in Composer
       - name: Verify Variables JSON in Composer
         run: |
-          gcloud composer environments run airflow-dev --location us-central1 -- ls /home/airflow/gcs/data/dev/
+          gcloud composer environments run airflow-dev \
+            --location us-central1 \
+            bash -- -c "ls /home/airflow/gcs/data/dev/"
 
       # Import Variables into Airflow-DEV
       - name: Import Variables into Airflow-DEV
@@ -97,7 +99,9 @@ jobs:
       # Verify Variables JSON in Composer
       - name: Verify Variables JSON in Composer
         run: |
-          gcloud composer environments run airflow-prod --location us-central1 -- ls /home/airflow/gcs/data/prod/
+          gcloud composer environments run airflow-prod \
+            --location us-central1 \
+            bash -- -c "ls /home/airflow/gcs/data/prod/"
 
       # Import Variables into Airflow-PROD
       - name: Import Variables into Airflow-PROD
