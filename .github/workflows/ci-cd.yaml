@@ -32,18 +32,6 @@ jobs:
       - name: Upload Variables JSON to GCS
         run: |
           gsutil cp variables/dev/variables.json gs://us-central1-airflow-e9414780-bucket/data/dev/variables.json
-          gsutil ls gs://us-central1-airflow-e9414780-bucket/data/dev/
-
-      # Wait for GCS Sync
-      - name: Wait for GCS Sync
-        run: sleep 30
-
-      # Verify Variables JSON in Composer (Optional)
-      - name: Verify Variables JSON in Composer
-        run: |
-          gcloud composer environments run airflow-dev \
-            --location us-central1 \
-            variables list
 
       # Import Variables into Airflow-DEV
       - name: Import Variables into Airflow-DEV
@@ -90,18 +78,6 @@ jobs:
       - name: Upload Variables JSON to GCS
         run: |
           gsutil cp variables/prod/variables.json gs://us-central1-airflow-e9414780-bucket/data/prod/variables.json
-          gsutil ls gs://us-central1-airflow-e9414780-bucket/data/prod/
-
-      # Wait for GCS Sync
-      - name: Wait for GCS Sync
-        run: sleep 30
-
-      # Verify Variables JSON in Composer (Optional)
-      - name: Verify Variables JSON in Composer
-        run: |
-          gcloud composer environments run airflow-prod \
-            --location us-central1 \
-            variables list
 
       # Import Variables into Airflow-PROD
       - name: Import Variables into Airflow-PROD
