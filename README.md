@@ -38,3 +38,23 @@ This project automates the orchestration and processing of flight booking data u
 │       └── variables.json         # Production environment variables
 
 └── flight_booking.csv             # Sample flight booking data
+
+
+## Setup
+
+### Prerequisites
+	
+ 1.	GCP Project with:
+
+   •	Composer (Airflow) environment.
+	  
+   •	BigQuery datasets for dev and prod.
+	  
+   •	Cloud Storage bucket for data and DAG storage.
+   
+	2.	GitHub Secrets:
+ 
+  •	GCP_SA_KEY: Service account key in JSON format.
+	
+  •	GCP_PROJECT_ID: GCP project ID.
+
