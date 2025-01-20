@@ -4,13 +4,13 @@ This project automates the orchestration and processing of flight booking data u
 
 ## Features
 
-	•	CI/CD Integration: Automates deployment of Airflow DAGs, PySpark jobs, and environment variables using GitHub Actions.
+•	CI/CD Integration: Automates deployment of Airflow DAGs, PySpark jobs, and environment variables using GitHub Actions.
  
-	•	Apache Airflow: Orchestrates the pipeline, including file sensing and data processing tasks.
+•	Apache Airflow: Orchestrates the pipeline, including file sensing and data processing tasks.
  
-	•	PySpark Data Processing: Transforms flight booking data and generates insights for storage in BigQuery.
+•	PySpark Data Processing: Transforms flight booking data and generates insights for storage in BigQuery.
  
-	•	GCP Integration: Utilizes GCP services like Composer (Airflow), BigQuery, and Cloud Storage.
+•	GCP Integration: Utilizes GCP services like Composer (Airflow), BigQuery, and Cloud Storage.
  
 ## Project Structure
 
