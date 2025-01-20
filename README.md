@@ -52,7 +52,7 @@ This project automates the orchestration and processing of flight booking data u
 	  
    •	Cloud Storage bucket for data and DAG storage.
    
-	2.	GitHub Secrets:
+2.	GitHub Secrets:
  
   •	GCP_SA_KEY: Service account key in JSON format.
 	
