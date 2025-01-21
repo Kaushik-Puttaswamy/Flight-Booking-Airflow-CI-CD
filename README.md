@@ -75,3 +75,21 @@ Workflow tasks include:
  2.	Importing variables into the corresponding Composer environment.
 	
  3.	Syncing Airflow DAGs and PySpark jobs to GCS.
+
+## Airflow DAG
+
+### DAG: flight_booking_dataproc_bq_dag
+
+1.	File Sensor: Checks for the availability of the input CSV file in the GCS bucket.
+
+2.	PySpark Job: Processes flight booking data and writes transformed data and insights to BigQuery.
+
+### Key Variables
+
+•	env: Deployment environment (dev or prod).
+
+•	gcs_bucket: Cloud Storage bucket name.
+	
+•	bq_project: BigQuery project ID.
+
+•	bq_dataset: BigQuery dataset name.
