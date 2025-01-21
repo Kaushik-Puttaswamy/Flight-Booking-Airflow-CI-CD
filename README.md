@@ -101,21 +101,18 @@ Workflow tasks include:
 •	Reads flight booking data from GCS.
 
 •	Applies transformations to calculate:
-	
+		
+	• Weekend Bookings.
  	
-• Weekend Bookings.
- 
-	
-• Lead Time Categories.
- 
-	
-• Booking Success Rate.
+	• Lead Time Categories.
+ 	
+	• Booking Success Rate.
 
 •	Generates insights for:
 	
- 	• Route performance.
+ Route performance.
 	
- 	• Booking origins.
+ Booking origins.
 
 •	Writes results to BigQuery.
 
