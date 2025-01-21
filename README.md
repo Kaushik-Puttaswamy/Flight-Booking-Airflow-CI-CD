@@ -69,6 +69,9 @@ The pipeline is triggered on changes to the following branches:
  •	main: Deploys resources to the production environment.
 
 Workflow tasks include:
-	1.	Uploading Airflow variables (variables.json) to GCS.
-	2.	Importing variables into the corresponding Composer environment.
-	3.	Syncing Airflow DAGs and PySpark jobs to GCS.
+	
+ 1.	Uploading Airflow variables (variables.json) to GCS.
+	
+ 2.	Importing variables into the corresponding Composer environment.
+	
+ 3.	Syncing Airflow DAGs and PySpark jobs to GCS.
