@@ -58,3 +58,17 @@ This project automates the orchestration and processing of flight booking data u
 	
   	• GCP_PROJECT_ID: GCP project ID.
 
+## CI/CD Workflow
+
+The pipeline is triggered on changes to the following branches:
+
+	
+ •	dev: Deploys resources to the development environment.
+ 
+	
+ •	main: Deploys resources to the production environment.
+
+Workflow tasks include:
+	1.	Uploading Airflow variables (variables.json) to GCS.
+	2.	Importing variables into the corresponding Composer environment.
+	3.	Syncing Airflow DAGs and PySpark jobs to GCS.
