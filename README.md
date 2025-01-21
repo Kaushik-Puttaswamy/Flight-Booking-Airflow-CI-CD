@@ -93,3 +93,27 @@ Workflow tasks include:
 •	bq_project: BigQuery project ID.
 
 •	bq_dataset: BigQuery dataset name.
+
+## PySpark Job
+
+### spark_transformation_job.py
+
+•	Reads flight booking data from GCS.
+
+•	Applies transformations to calculate:
+	
+ •	Weekend Bookings.
+ 
+	
+ •	Lead Time Categories.
+ 
+	
+ •	Booking Success Rate.
+
+•	Generates insights for:
+	
+ •	Route performance.
+	
+ •	Booking origins.
+
+•	Writes results to BigQuery.
