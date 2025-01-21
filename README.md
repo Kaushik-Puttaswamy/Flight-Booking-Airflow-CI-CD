@@ -102,18 +102,26 @@ Workflow tasks include:
 
 •	Applies transformations to calculate:
 	
- •	Weekend Bookings.
+ 	•	Weekend Bookings.
  
 	
- •	Lead Time Categories.
+ 	•	Lead Time Categories.
  
 	
- •	Booking Success Rate.
+ 	•	Booking Success Rate.
 
 •	Generates insights for:
 	
- •	Route performance.
+ 	•	Route performance.
 	
- •	Booking origins.
+ 	•	Booking origins.
 
 •	Writes results to BigQuery.
+
+## How to Run
+	
+ 1.	Push changes to the dev or main branch.
+	
+ 2.	GitHub Actions automatically deploy resources to the respective environment.
+	
+ 3.	Trigger the DAG manually via the Airflow UI to process the data.
