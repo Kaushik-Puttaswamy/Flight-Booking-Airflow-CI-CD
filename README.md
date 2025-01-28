@@ -148,6 +148,6 @@ This project demonstrates a robust and scalable approach to managing and process
 	
 •	Advanced Analytics: Incorporate machine learning models for predictive insights such as demand forecasting and pricing trends.
 	
- •	Monitoring and Alerts: Implement detailed monitoring and alerting for task failures and performance issues.
+•	Monitoring and Alerts: Implement detailed monitoring and alerting for task failures and performance issues.
 	
- •	Multi-Region Deployment: Scale the pipeline to support multi-region data processing for global availability.
+•	Multi-Region Deployment: Scale the pipeline to support multi-region data processing for global availability.
