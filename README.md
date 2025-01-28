@@ -146,7 +146,7 @@ This project demonstrates a robust and scalable approach to managing and process
 	
 •	Data Quality Checks: Integrate automated validation to ensure data integrity before processing.
 	
- •	Advanced Analytics: Incorporate machine learning models for predictive insights such as demand forecasting and pricing trends.
+•	Advanced Analytics: Incorporate machine learning models for predictive insights such as demand forecasting and pricing trends.
 	
  •	Monitoring and Alerts: Implement detailed monitoring and alerting for task failures and performance issues.
 	
