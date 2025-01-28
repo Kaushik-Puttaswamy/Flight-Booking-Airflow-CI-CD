@@ -123,3 +123,31 @@ Workflow tasks include:
  2.	GitHub Actions automatically deploy resources to the respective environment.
 	
  3.	Trigger the DAG manually via the Airflow UI to process the data.
+
+## Sample Data
+
+Input: flight_booking.csv
+
+Output: BigQuery tables for transformed data and insights:
+	
+ •	transformed_flight_data_{env}
+	
+ •	route_insights_{env}
+	
+ •	origin_insights_{env}
+
+## Conclusion
+
+This project demonstrates a robust and scalable approach to managing and processing flight booking data using Airflow and GCP services. By automating the deployment process with CI/CD pipelines and leveraging PySpark for data transformation, the workflow ensures efficiency and accuracy across development and production environments.
+
+## Future Work
+
+•	Real-Time Processing: Enhance the pipeline to handle streaming data for near real-time insights.
+	
+ •	Data Quality Checks: Integrate automated validation to ensure data integrity before processing.
+	
+ •	Advanced Analytics: Incorporate machine learning models for predictive insights such as demand forecasting and pricing trends.
+	
+ •	Monitoring and Alerts: Implement detailed monitoring and alerting for task failures and performance issues.
+	
+ •	Multi-Region Deployment: Scale the pipeline to support multi-region data processing for global availability.
