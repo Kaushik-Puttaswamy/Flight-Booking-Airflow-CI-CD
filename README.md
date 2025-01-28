@@ -144,7 +144,7 @@ This project demonstrates a robust and scalable approach to managing and process
 
 •	Real-Time Processing: Enhance the pipeline to handle streaming data for near real-time insights.
 	
- •	Data Quality Checks: Integrate automated validation to ensure data integrity before processing.
+•	Data Quality Checks: Integrate automated validation to ensure data integrity before processing.
 	
  •	Advanced Analytics: Incorporate machine learning models for predictive insights such as demand forecasting and pricing trends.
 	
