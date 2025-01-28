@@ -102,17 +102,17 @@ Workflow tasks include:
 
 •	Applies transformations to calculate:
 		
-• Weekend Bookings.
+	• Weekend Bookings.
  	
-• Lead Time Categories.
+	• Lead Time Categories.
  	
-• Booking Success Rate.
+	• Booking Success Rate.
 
 •	Generates insights for:
 	
- Route performance.
+ 	• Route performance.
 	
- Booking origins.
+ 	• Booking origins.
 
 •	Writes results to BigQuery.
 
