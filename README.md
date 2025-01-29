@@ -106,7 +106,7 @@ Workflow tasks include:
  	
 		• Lead Time Categories.
  	
-	• Booking Success Rate.
+		• Booking Success Rate.
 
 •	Generates insights for:
 	
