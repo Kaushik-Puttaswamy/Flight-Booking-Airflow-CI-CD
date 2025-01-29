@@ -1,8 +1,8 @@
-import argparse
-from pyspark.sql import SparkSession
-from pyspark.sql.functions import col, count, avg, when, lit, expr
-import logging
-import sys
+import argparse  # For parsing command-line arguments
+from pyspark.sql import SparkSession  # To create a Spark session for working with DataFrames
+from pyspark.sql.functions import col, count, avg, when, lit, expr  # Importing various PySpark functions
+import logging  # For logging messages
+import sys  # For system-specific parameters and functions
 
 # Initialize Logging
 logging.basicConfig(
