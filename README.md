@@ -102,9 +102,11 @@ Workflow tasks include:
 
 • Applies transformations to calculate:	
 
-	• Weekend Bookings.
+   • Weekend Bookings.
  	
-
+   • Lead Time Categories.
+ 	
+   • Booking Success Rate.
 
 •	Generates insights for:
 	
