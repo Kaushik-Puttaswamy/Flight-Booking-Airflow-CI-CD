@@ -108,7 +108,7 @@ Workflow tasks include:
  	
 	• Booking Success Rate.
 
-•	Generates insights for:
+• Generates insights for:
 	
  	• Route performance.
 	
