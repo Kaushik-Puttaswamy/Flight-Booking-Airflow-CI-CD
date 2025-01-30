@@ -101,6 +101,8 @@ Workflow tasks include:
 •	Reads flight booking data from GCS.
 
 •	Applies transformations to calculate:
+
+   	• Composer (Airflow) environment.
 		
 		• Weekend Bookings.
  	
