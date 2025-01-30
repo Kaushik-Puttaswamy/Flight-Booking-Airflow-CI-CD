@@ -104,9 +104,7 @@ Workflow tasks include:
 
 	• Weekend Bookings.
  	
-		• Lead Time Categories.
- 	
-		• Booking Success Rate.
+
 
 •	Generates insights for:
 	
