@@ -102,9 +102,7 @@ Workflow tasks include:
 
 •	Applies transformations to calculate:
 
-  • Composer (Airflow) environment.
-		
-		• Weekend Bookings.
+ 	• Weekend Bookings.
  	
 		• Lead Time Categories.
  	
