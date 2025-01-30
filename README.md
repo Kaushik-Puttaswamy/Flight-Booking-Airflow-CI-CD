@@ -98,11 +98,11 @@ Workflow tasks include:
 
 ### spark_transformation_job.py
 
-•	Reads flight booking data from GCS.
+• Reads flight booking data from GCS.
 
-•	Applies transformations to calculate:
+• Applies transformations to calculate:	
 
-     • Weekend Bookings.
+	• Weekend Bookings.
  	
 		• Lead Time Categories.
  	
