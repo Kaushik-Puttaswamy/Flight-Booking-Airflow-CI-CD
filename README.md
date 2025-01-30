@@ -108,13 +108,13 @@ Workflow tasks include:
  	
 	• Booking Success Rate.
 
-• Generates insights for:
+3) Generates insights for:
 	
  	• Route performance.
 	
  	• Booking origins.
 
-•	Writes results to BigQuery.
+4) Writes results to BigQuery.
 
 ## How to Run
 	
