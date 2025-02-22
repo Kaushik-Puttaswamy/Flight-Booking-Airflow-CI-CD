@@ -1,153 +1,156 @@
-# Flight-Booking-Airflow-CICD
 
-This project automates the orchestration and processing of flight booking data using Apache Airflow, Google Cloud Platform (GCP), and PySpark. The CI/CD pipeline ensures efficient deployment and data processing in development and production environments.
+# ✈️ Flight-Booking-Airflow-CICD
 
-## Features
+Welcome to **Flight-Booking-Airflow-CICD**! This project automates the orchestration and processing of flight booking data using [Apache Airflow](https://airflow.apache.org/), [Google Cloud Platform (GCP)](https://cloud.google.com/), and [PySpark](https://spark.apache.org/). Our CI/CD pipeline ensures efficient deployment and data processing across both development and production environments.
 
-•	CI/CD Integration: Automates deployment of Airflow DAGs, PySpark jobs, and environment variables using GitHub Actions.
- 
-•	Apache Airflow: Orchestrates the pipeline, including file sensing and data processing tasks.
- 
-•	PySpark Data Processing: Transforms flight booking data and generates insights for storage in BigQuery.
- 
-•	GCP Integration: Utilizes GCP services like Composer (Airflow), BigQuery, and Cloud Storage.
- 
-## Project Structure
+---
 
+## 📚 Table of Contents
+- [🚀 Features](#-features)
+- [📁 Project Structure](#-project-structure)
+- [🔧 Setup](#-setup)
+- [🔄 CI/CD Workflow](#-cicd-workflow)
+- [🛫 Airflow DAG](#-airflow-dag)
+- [🔥 PySpark Job](#-pyspark-job)
+- [▶️ How to Run](#-how-to-run)
+- [📊 Sample Data](#-sample-data)
+- [💡 Conclusion](#-conclusion)
+- [🔮 Future Work](#-future-work)
+
+---
+
+## 🚀 Features
+
+- **CI/CD Integration**  
+  Automates deployment of Airflow DAGs, PySpark jobs, and environment variables using GitHub Actions.
+
+- **Apache Airflow**  
+  Orchestrates the pipeline, including file sensing and data processing tasks.
+
+- **PySpark Data Processing**  
+  Transforms flight booking data and generates insights for storage in BigQuery.
+
+- **GCP Integration**  
+  Leverages GCP services like Composer (Airflow), BigQuery, and Cloud Storage.
+
+---
+
+## 📁 Project Structure
+
+```plaintext
 .
 ├── .github/workflows/
-
 │   └── Flight-Booking-CICD.yml    # GitHub Actions workflow file for CI/CD
-
 ├── airflow_job/
-
 │   └── airflow_job.py             # Airflow DAG for data orchestration
-
 ├── spark_job/
-
 │   └── spark_transformation_job.py # PySpark job for data processing
-
 ├── variables/
-
 │   ├── dev/
-│
-│   └── variables.json         # Development environment variables
-
+│   └── variables.json             # Development environment variables
 │   └── prod/
-
 │       └── variables.json         # Production environment variables
-
 └── flight_booking.csv             # Sample flight booking data
+```
 
+---
 
-## Setup
+## 🔧 Setup
 
 ### Prerequisites
-	
- 1.	GCP Project with:
 
-   	• Composer (Airflow) environment.
-	  
-   	• BigQuery datasets for dev and prod.
-	  
-   	• Cloud Storage bucket for data and DAG storage.
-   
-2.	GitHub Secrets:
- 
-  	• GCP_SA_KEY: Service account key in JSON format.
-	
-  	• GCP_PROJECT_ID: GCP project ID.
+1. **GCP Project** with:
+   - A Composer (Airflow) environment.
+   - BigQuery datasets for both **dev** and **prod**.
+   - A Cloud Storage bucket for data and DAG storage.
 
-## CI/CD Workflow
+2. **GitHub Secrets**:
+   - `GCP_SA_KEY`: Service account key in JSON format.
+   - `GCP_PROJECT_ID`: Your GCP project ID.
+
+---
+
+## 🔄 CI/CD Workflow
 
 The pipeline is triggered on changes to the following branches:
 
-	
- •	dev: Deploys resources to the development environment.
- 
-	
- •	main: Deploys resources to the production environment.
+- **dev**: Deploys resources to the development environment.
+- **main**: Deploys resources to the production environment.
 
-Workflow tasks include:
-	
- 1.	Uploading Airflow variables (variables.json) to GCS.
-	
- 2.	Importing variables into the corresponding Composer environment.
-	
- 3.	Syncing Airflow DAGs and PySpark jobs to GCS.
+### Workflow Tasks
 
-## Airflow DAG
+1. **Upload Airflow Variables**: Uploads `variables.json` to GCS.
+2. **Import Variables**: Imports variables into the corresponding Composer environment.
+3. **Sync DAGs & Jobs**: Synchronizes Airflow DAGs and PySpark jobs to GCS.
 
-### DAG: flight_booking_dataproc_bq_dag
+---
 
-1.	File Sensor: Checks for the availability of the input CSV file in the GCS bucket.
+## 🛫 Airflow DAG
 
-2.	PySpark Job: Processes flight booking data and writes transformed data and insights to BigQuery.
+### DAG: `flight_booking_dataproc_bq_dag`
 
-### Key Variables
+- **File Sensor**: Monitors for the presence of the input CSV file in the GCS bucket.
+- **PySpark Job**: Processes flight booking data and writes transformed data and insights to BigQuery.
 
-•	env: Deployment environment (dev or prod).
+#### Key Variables
 
-•	gcs_bucket: Cloud Storage bucket name.
-	
-•	bq_project: BigQuery project ID.
+- `env`: Deployment environment (`dev` or `prod`).
+- `gcs_bucket`: Cloud Storage bucket name.
+- `bq_project`: BigQuery project ID.
+- `bq_dataset`: BigQuery dataset name.
 
-•	bq_dataset: BigQuery dataset name.
+---
 
-## PySpark Job
+## 🔥 PySpark Job
 
-### spark_transformation_job.py
+### File: `spark_transformation_job.py`
 
-1) Reads flight booking data from GCS.
+1. **Data Ingestion**: Reads flight booking data from GCS.
+2. **Data Transformation**: Calculates:
+   - Weekend Bookings.
+   - Lead Time Categories.
+   - Booking Success Rate.
+3. **Insight Generation**: Derives insights on:
+   - Route performance.
+   - Booking origins.
+4. **Data Output**: Writes the results to BigQuery.
 
-2) Applies transformations to calculate:	
+---
 
-	• Weekend Bookings.
- 	
-	• Lead Time Categories.
- 	
-	• Booking Success Rate.
+## ▶️ How to Run
 
-3) Generates insights for:
-	
- 	• Route performance.
-	
- 	• Booking origins.
+1. **Push Changes**: Commit and push changes to the `dev` or `main` branch.
+2. **Automatic Deployment**: GitHub Actions deploys resources to the respective environment.
+3. **Trigger the DAG**: Manually trigger the DAG via the Airflow UI to process the data.
 
-4) Writes results to BigQuery.
+---
 
-## How to Run
-	
- 1.	Push changes to the dev or main branch.
-	
- 2.	GitHub Actions automatically deploy resources to the respective environment.
-	
- 3.	Trigger the DAG manually via the Airflow UI to process the data.
+## 📊 Sample Data
 
-## Sample Data
+- **Input**: `flight_booking.csv`
 
-Input: flight_booking.csv
+- **Output**: BigQuery tables for:
+  - `transformed_flight_data_{env}`
+  - `route_insights_{env}`
+  - `origin_insights_{env}`
 
-Output: BigQuery tables for transformed data and insights:
-	
- •	transformed_flight_data_{env}
-	
- •	route_insights_{env}
-	
- •	origin_insights_{env}
+---
 
-## Conclusion
+## 💡 Conclusion
 
-This project demonstrates a robust and scalable approach to managing and processing flight booking data using Airflow and GCP services. By automating the deployment process with CI/CD pipelines and leveraging PySpark for data transformation, the workflow ensures efficiency and accuracy across development and production environments.
+This project demonstrates a robust and scalable approach to managing flight booking data using Airflow and GCP services. By automating the deployment process with CI/CD pipelines and leveraging PySpark for data transformation, the workflow achieves efficiency and accuracy in both development and production environments.
 
-## Future Work
+---
 
-•	Real-Time Processing: Enhance the pipeline to handle streaming data for near real-time insights.
-	
-•	Data Quality Checks: Integrate automated validation to ensure data integrity before processing.
-	
-•	Advanced Analytics: Incorporate machine learning models for predictive insights such as demand forecasting and pricing trends.
-	
-•	Monitoring and Alerts: Implement detailed monitoring and alerting for task failures and performance issues.
-	
-•	Multi-Region Deployment: Scale the pipeline to support multi-region data processing for global availability.
+## 🔮 Future Work
+
+- **Real-Time Processing**: Enhance the pipeline to support streaming data for near real-time insights.
+- **Data Quality Checks**: Integrate automated validations to ensure data integrity before processing.
+- **Advanced Analytics**: Incorporate machine learning models for predictive insights (e.g., demand forecasting, pricing trends).
+- **Monitoring and Alerts**: Implement detailed monitoring and alerting for task failures and performance issues.
+- **Multi-Region Deployment**: Scale the pipeline to support multi-region data processing for global availability.
+
+---
+
+Happy Coding! 🚀
+```
